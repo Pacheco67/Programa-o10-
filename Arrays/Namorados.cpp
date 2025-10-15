@@ -38,7 +38,7 @@ int main()
 		}
 		else
 		{
-			cout << "\nessa pessoa não existe>..<";
+			cout << "\nessa pessoa nÃ£o existe>..<";
 		}
 		cout << "\n\ndeseja sair (s/n)";
 		cin >> sair;
