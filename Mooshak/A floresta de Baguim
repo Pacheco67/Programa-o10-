@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+#include <locale.h>
+#include <cstdlib>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    srand(time(0));
+    int num;
+
+    int N, K;
+    cin >> N >> K;
+
+    char floresta[50][50];
+
+   
+    for (int i = 0; i < N; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> floresta[i][j];
+        }
+    }
+
+   
+    for (int i = 0; i < N; i++) {
+        int consecutivos = 0;
+
+        for (int j = 0; j < N; j++) {
+            if (floresta[i][j] == '.') {
+                consecutivos++;
+                if (consecutivos == K) {
+                    cout << 1;
+                    return 0;  
+                }
+            }
+            else {
+                consecutivos = 0; 
+            }
+        }
+    }
+
+    
+    cout << 0;
+
+    return 0;
+}
