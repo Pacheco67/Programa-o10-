@@ -1,0 +1,48 @@
+include <iostream>
+#include <string>
+#include <locale.h>
+#include <cstdlib>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Portuguese");
+	srand(time(0));
+    int N;
+    cin >> N;
+
+    long long Pares1 = 0, Impares1 = 0;
+
+    for (int i = 0; i < N; i++) {
+        int x;
+        cin >> x;
+        if (x % 2 == 0)
+            Pares1++;
+        else
+            Impares1++;
+    }
+
+    int M;
+    cin >> M;
+
+    long pares2 = 0, impares2 = 0;
+
+    for (int i = 0; i < M; i++) {
+        int x;
+        cin >> x;
+        if (x % 2 == 0)
+            pares2++;
+        else
+            impares2++;
+    }
+
+    long long somaPar = (Pares1 * pares2) + (Impares1 * impares2);
+    long long somaImpar = (Pares1 * impares2) + (Impares1 * pares2);
+
+    cout << somaPar << " " << somaImpar << "\n";
+
+    return 0;
+}
+
+
